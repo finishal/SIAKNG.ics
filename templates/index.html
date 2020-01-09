@@ -1,0 +1,33 @@
+<style>
+    #tabel-jadwal > div {
+        height: 50vh;
+        overflow: scroll;
+        border: 1px solid black;
+    }
+    textarea[name="tabel-jadwal"] {
+        display: none;
+    }
+</style>
+
+<form method="POST" action="/" id="tabel-jadwal">
+    <div contenteditable="true"></div>
+    <label>
+        <input type="radio" name="status" value="1" checked>
+        Membuat
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="status" value="0">
+        Menghapus
+    </label>
+    <br>
+    <textarea name="tabel-jadwal"></textarea>
+    <button type="submit">Unduh</button>
+</form>
+<noscript>Silakan aktifkan JavaScript untuk menggunakan aplikasi ini.</noscript>
+
+<script>
+    document.querySelector("#tabel-jadwal > button").onclick = function(){
+        document.querySelector("#tabel-jadwal > textarea").innerHTML = document.querySelector("#tabel-jadwal > div").innerHTML
+    }
+</script>
